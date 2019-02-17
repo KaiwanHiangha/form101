@@ -3,6 +3,12 @@
       <input type="text" 
       formControlName="FirstName" 
       placeholder="first name">
+      <label style="color:red"
+       *ngIf=
+      "formGroup.get('email').invalid && 
+      formGroup.get('email').touched &&
+      formGroup.get('email').errors['email']
+      ">Required.</label>
     </div>
     <div>
         <input type="text" 
@@ -17,7 +23,9 @@
         <div>
             <input type="number" 
             formControlName="age" 
-            placeholder="age">
+            placeholder="age"
+            max="99"
+            min="0">
           </div>
       <button>submit</button>
   </form>
